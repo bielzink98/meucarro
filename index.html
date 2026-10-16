@@ -607,7 +607,7 @@ function updateCar(dt){
   const tgt=!car.on?0:car.gear===0?800+thr*5200:Math.max(800,wheelRpm*Math.abs(ratio)*FINAL);
   car.rpm+=(tgt-car.rpm)*Math.min(1,dt*8);
   let a=0;
-  if(car.on&&car.gear!==0&&car.rpm<6000&&wheelsOk){a=thr*7*Math.abs(ratio)/3.6*Math.sign(ratio)*(1-car.wear/200);if(car.gear>=3&&car.rpm<1200)a*=.3;}
+  if(car.on&&car.gear!==0&&car.rpm<6000&&wheelsOk){a=thr*18*Math.abs(ratio)/3.6*Math.sign(ratio)*(1-car.wear/200);if(car.gear>=3&&car.rpm<1200)a*=.3;}
   // TURBINA
   const tb=installed.turbo[0],turboOk=tb&&tb.tight>=DEFS.turbo.b;
   const spool=turboOk&&car.on&&thr>0&&car.rpm>2500?1:0;
